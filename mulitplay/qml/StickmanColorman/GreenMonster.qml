@@ -17,7 +17,7 @@ Item {
                 frameRate: 10
                 frameWidth: 40
                 frameHeight: 43
-                source: "/root/mulitplay/assets/img/monster/greenMonster.png"
+                source: "../../assets/img/monster/greenMonster.png"
             }
         }
         x: scene.width + /*800*/ 320 + Math.floor(Math.random() * 2 + 1) * 100

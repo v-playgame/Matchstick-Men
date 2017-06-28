@@ -46,3 +46,8 @@ macx {
 
 HEADERS += \
     controls.h
+
+DISTFILES += \
+    qml/StickmanAvoid/GameOver.qml \
+    qml/StickmanAvoid/GameReady.qml \
+    qml/StickmanAvoid/CreateObstacle.qml

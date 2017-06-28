@@ -8,7 +8,6 @@ EntityBase {
     height: 120
     width: 1
 
-
     MovementAnimation {
         id: movementX
         target: pipe
@@ -18,7 +17,7 @@ EntityBase {
         running: scene.gameState === "play"
         onLimitReached: {
             pipe.x = 400
-            pipe.y = 30 + Math.random()*200
+            pipe.y = 30 + Math.random() * 200
         }
     }
 
@@ -49,7 +48,7 @@ EntityBase {
         bodyType: Body.Static
         collisionTestingOnlyMode: false
         fixture.onBeginContact: {
-           allFunction.stopGame()
+            allFunction.stopGame()
         }
     }
     BoxCollider {
@@ -62,10 +61,9 @@ EntityBase {
         }
     }
 
-
     MultiResolutionImage {
         id: lowerPipe
-        source: "/root/mulitplay/assets/img/pipe.png"
+        source: "../../assets/img/barrier/pipe.png"
         mirror: true
         rotation: 180
         anchors.top: pipe.bottom
@@ -74,7 +72,7 @@ EntityBase {
 
     MultiResolutionImage {
         id: upperPipe
-        source: "/root/mulitplay/assets/img/pipe.png"
+        source: "../../assets/img/barrier/pipe.png"
         anchors.bottom: pipe.top
         anchors.horizontalCenter: pipe.horizontalCenter
     }
@@ -84,5 +82,4 @@ EntityBase {
         gameover.opacity = 1
         hitSound.play()
     }
-
 }

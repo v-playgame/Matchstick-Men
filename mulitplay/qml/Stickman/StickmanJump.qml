@@ -70,25 +70,14 @@ Common.Gamebase {
         }
     }
 
-    //            MouseArea {
-    ////                anchors.fill: scene
-    ////                mouseX:
-    //                onClicked: {
-    //                    if(scene.gameState === "wait") {
-    //                        tap.visible = false
-    //                        scene.gameState = "play"
-    //                    } else if(scene.gameState === "play")
-    //                        player.push()
-    //                }
-    //            }
     SoundEffectVPlay {
         id: pointSound
-        source: "/root/mulitplay/assets/snd/point.wav"
+        source: "../../assets/snd/point.wav"
     }
 
     SoundEffectVPlay {
         id: hitSound
-        source: "/root/mulitplay/assets/snd/hit.wav"
+        source: "../../assets/snd/hit.wav"
     }
 
     Function {

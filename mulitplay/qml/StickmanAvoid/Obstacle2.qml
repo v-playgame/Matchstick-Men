@@ -7,7 +7,7 @@ EntityBase {
 
     MultiResolutionImage {
         id: o1
-        source: "/root/mulitplay/assets/img/view-filter.png"
+        source: "../../assets/img/barrier/view-filter.png"
     }
 
     MovementAnimation {
@@ -21,8 +21,26 @@ EntityBase {
             velocity = -velocity
         }
     }
+
     MovementAnimation {
         id: mv
+        target: o1
+        property: "x"
+        running: {
+
+            scene.gameState === "play"
+        }
+        minPropertyValue: -800
+        maxPropertyValue: 200
+        velocity: -150
+
+        onLimitReached: {
+            x = scene.width + 100
+        }
+    }
+
+    MovementAnimation {
+        id: mvs
         target: o1
         property: "x"
         running: {
@@ -31,10 +49,10 @@ EntityBase {
         }
         minPropertyValue: -800
         maxPropertyValue: 200
-        velocity: -50
+        velocity: 200
 
         onLimitReached: {
-            x = scene.width + 100
+            x = -200
         }
     }
 

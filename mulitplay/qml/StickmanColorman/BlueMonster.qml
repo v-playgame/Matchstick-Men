@@ -16,7 +16,7 @@ EntityBase {
             frameRate: 10
             frameWidth: 40
             frameHeight: 43
-            source: "/root/mulitplay/assets/img/monster/blueMonster.png"
+            source: "../../assets/img/monster/blueMonster.png"
         }
     }
 

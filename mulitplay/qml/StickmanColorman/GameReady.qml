@@ -32,7 +32,7 @@ Item {
     //    }
     MultiResolutionImage {
         id: play
-        source: "/root/mulitplay/assets/img/gameStart/彩色忍者.png"
+        source: "../../assets/img/gameStart/彩色忍者.png"
         x: 10
         y: 80
         MouseArea {

@@ -19,7 +19,7 @@ EntityBase {
             frameRate: 10
             frameWidth: 40
             frameHeight: 40
-            source: "/root/mulitplay/assets/img/stickman.png"
+            source: "../../assets/img/player/stickman.png"
         }
     }
     CircleCollider {

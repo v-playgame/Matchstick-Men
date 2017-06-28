@@ -11,14 +11,18 @@ EntityBase {
         id: bird
         anchors.centerIn: parent
         rotation: collider.linearVelocity.y
-        running: true
+        running: scene.gameState === "play"
 
         SpriteVPlay {
             frameCount: 3
-            frameRate: 10
+            frameRate: 20
             frameWidth: 40
             frameHeight: 40
-            source: "/root/mulitplay/assets/img/stickman.png"
+            source: {
+
+                scene.gameState === "play"
+                        && myMouse.pressed ? "../../assets/img/player/stickman1.png" : "../../assets/img/player/stickman.png"
+            }
         }
     }
 
@@ -30,7 +34,8 @@ EntityBase {
             var collidedEntity = other.getBody().target
             console.debug("collided with entity", collidedEntity.entityType)
             if (collidedEntity.entityType === "obstacle1"
-                    || collidedEntity.entityType === "obstacle2") {
+                    || collidedEntity.entityType === "obstacle2"
+                    || collidedEntity.entityType === "obstacle3") {
                 scene.gameState = "gameOver"
             }
         }

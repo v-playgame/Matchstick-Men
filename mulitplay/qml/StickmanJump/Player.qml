@@ -18,21 +18,19 @@ EntityBase {
             frameRate: 10
             frameWidth: 40
             frameHeight: 40
-            source: "/root/mulitplay/assets/img/stickman.png"
+            source: "../../assets/img/player/stickman.png"
         }
     }
 
-
     CircleCollider {
         id: collider
-        radius:15
+        radius: 15
     }
 
     function push() {
-        collider.body.linearVelocity = Qt.point(0,0)
-        var localForwardVector = collider.body.toWorldVector(Qt.point(0,-280));
-        collider.body.applyLinearImpulse(localForwardVector, collider.body.getWorldCenter());
+        collider.body.linearVelocity = Qt.point(0, 0)
+        var localForwardVector = collider.body.toWorldVector(Qt.point(0, -280))
+        collider.body.applyLinearImpulse(localForwardVector,
+                                         collider.body.getWorldCenter())
     }
-
-
 }

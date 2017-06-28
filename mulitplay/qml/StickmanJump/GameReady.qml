@@ -32,7 +32,7 @@ Item {
     //    }
     MultiResolutionImage {
         id: play
-        source: "/root/mulitplay/assets/img/gameStart/极限跳跃1.png"
+        source: "../../assets/img/gameStart/极限跳跃.png"
         x: 10
         y: 100
         MouseArea {

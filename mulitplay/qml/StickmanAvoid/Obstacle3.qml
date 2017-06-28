@@ -2,41 +2,15 @@ import QtQuick 2.0
 import VPlay 2.0
 
 EntityBase {
-    id: obstacle
-    entityType: "obstacle1"
-    x: scene.width + 400
-    y: 0
-
+    id: obstacle3
+    entityType: "obstacle3"
     Rectangle {
         id: o1
         width: 5
-        height: 100
+        height: 150
         color: "black"
     }
-    Rectangle {
-        id: re
-        width: 2
-        height: 2
-        color: "red"
-        anchors.top: o1.bottom
-        anchors.right: o1.right
-    }
-    BoxCollider {
-        anchors.fill: re
-        bodyType: Body.Dynamic
-    }
 
-    MovementAnimation {
-        target: o1
-        property: "y"
-        running: true
-        minPropertyValue: -150
-        maxPropertyValue: 150
-        velocity: 200
-        onLimitReached: {
-            velocity = -velocity
-        }
-    }
     MovementAnimation {
         id: mv
         target: o1
@@ -45,13 +19,22 @@ EntityBase {
 
             scene.gameState === "play"
         }
-        minPropertyValue: -800
-        maxPropertyValue: 800
+        minPropertyValue: -2000
+        maxPropertyValue: 2000
         velocity: -100
 
         onLimitReached: {
             x = scene.width + 100
         }
+    }
+
+    RotationAnimation {
+        target: o1
+        running: true
+        from: 0
+        to: 360
+        duration: 800
+        loops: Animation.Infinite
     }
 
     MovementAnimation {
@@ -70,9 +53,7 @@ EntityBase {
             x = -200
         }
     }
-
     BoxCollider {
-        id: bc
         anchors.fill: o1
         bodyType: Body.Static
     }

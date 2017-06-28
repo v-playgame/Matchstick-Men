@@ -1,29 +1,21 @@
-import QtQuick 2.0
 import VPlay 2.0
+import QtQuick 2.0
 import "../StickmanAvoid"
 import "../common" as Common
 
 Common.Gamebase {
     gameName: "StickmanAvoid"
+
     id: scene
 
-    //    property string gameState: "ready"
-    property int score: 0
-
-    width: 320
-    height: 480
     PhysicsWorld {
-        //debugDrawVisible: true
-        gravity.y: 9.8
+        // debugDrawVisible: true
+        gravity.y: 0.1
         z: 100
     }
-
-    //    Scene {
-    //        id: scene
-    //        width: 320
-    //        height: 480
     property string obstacleState: "run"
-    property string gameState: "play"
+    property string gameState: "ready"
+    property int n: 0
 
     Ground {
         x: -100
@@ -33,92 +25,72 @@ Common.Gamebase {
         id: o2
         x: scene.width
     }
-    Obstacle {
-        id: oo1
-        x: scene.width + 300
-        MovementAnimation {
-            target: oo1
-            property: "y"
-            running: true
-            minPropertyValue: -150
-            maxPropertyValue: 200
-            velocity: 200
-            onLimitReached: {
-                velocity = -velocity
-            }
-        }
+
+    Obstacle3 {
+        id: obstacle3
+        x: 1160
+        y: 150
     }
-    Obstacle {
-        id: oo2
-        x: scene.width + 300 + 40
-        MovementAnimation {
-            target: oo2
-            property: "y"
-            running: true
-            minPropertyValue: -150
-            maxPropertyValue: 200
-            velocity: 250
-            onLimitReached: {
-                velocity = -velocity
-            }
-        }
+
+    CreateObstacle {
     }
-    Obstacle {
-        id: oo3
-        x: scene.width + 300 + 80
-        MovementAnimation {
-            target: oo3
-            property: "y"
-            running: true
-            minPropertyValue: -150
-            maxPropertyValue: 200
-            velocity: 300
-            onLimitReached: {
-                velocity = -velocity
-            }
-        }
-    }
-    Obstacle {
-        id: oo4
-        x: scene.width + 420
-        MovementAnimation {
-            target: oo4
-            property: "y"
-            running: true
-            minPropertyValue: -150
-            maxPropertyValue: 200
-            velocity: 200
-            onLimitReached: {
-                velocity = -velocity
-            }
-        }
-    }
-    Obstacle {
-        id: oo5
-        x: scene.width + 460
-        MovementAnimation {
-            target: oo5
-            property: "y"
-            running: true
-            minPropertyValue: -150
-            maxPropertyValue: 200
-            velocity: 330
-            onLimitReached: {
-                velocity = -velocity
-            }
+
+    Component {
+        id: obstacle
+        Obstacle {
+            id: o1
         }
     }
 
     Player {
         id: player
         x: 100
-        y: 200
+        y: 300
     }
-    MouseArea {
-        id: myMouse
-        anchors.fill: parent
-        onPressed: {
-            scene.obstacleState === "norun"
+
+    Text {
+        id: tap
+        text: "(Tap the start button to start)"
+        color: "silver"
+        font.pixelSize: 20
+        x: 30
+        y: 200
+        visible: false
+    }
+
+    GameReady {
+        id: gameReady
+    }
+
+    Common.MenuButton {
+        id: opposition
+        text: "opposition"
+        anchors.right: scene.right
+        y: 250
+        opacity: 0.7
+        visible: opacity
+        anchors.rightMargin: 10
+        anchors.topMargin: 10
+    }
+
+    Common.MenuButton {
+        text: "start"
+        anchors.right: scene.right
+        y: 100
+        opacity: 0.7
+        visible: opacity
+        anchors.rightMargin: 10
+        anchors.topMargin: 10
+        onClicked: {
+            if (scene.gameState === "wait") {
+                tap.visible = false
+                scene.gameState = "play"
+            }
         }
     }
-} //}
+
+    MouseArea {
+        id: myMouse
+        anchors.fill: opposition
+    }
+}

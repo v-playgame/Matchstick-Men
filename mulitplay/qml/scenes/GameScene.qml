@@ -2,10 +2,10 @@ import VPlay 2.0
 import QtQuick 2.0
 import "../common"
 
-//游戏界面
 
+//游戏界面
 SceneBase {
-    id:gameScene
+    id: gameScene
 
     // the filename of the current level gets stored here, it is used for loading the
     property string activeGameFileName
@@ -24,6 +24,7 @@ SceneBase {
 
     MenuButton {
         text: "Back to menu"
+        // anchor the button to the gameWindowAnchorItem to be on the edge of the screen on any device
         anchors.right: gameScene.gameWindowAnchorItem.right
         anchors.rightMargin: 10
         anchors.top: gameScene.gameWindowAnchorItem.top
@@ -48,7 +49,6 @@ SceneBase {
         }
     }
 
-
     Text {
         anchors.left: gameScene.gameWindowAnchorItem.left
         anchors.leftMargin: 10
@@ -58,6 +58,4 @@ SceneBase {
         font.pixelSize: 10
         text: activeGame !== undefined ? activeGame.gameName : ""
     }
-
-
 }

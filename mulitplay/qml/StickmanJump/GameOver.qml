@@ -1,7 +1,6 @@
 import VPlay 2.0
 import QtQuick 2.0
 
-
 Item {
     width: parent.width
     height: parent.height
@@ -19,18 +18,17 @@ Item {
 
     MultiResolutionImage {
         id: restart
-        source: "/root/mulitplay/assets/img/restart.png"
+        source: "../../assets/img/BgAndButton/restart.png"
         x: scene.width / 3
         y: scene.height / 2
         MouseArea {
             anchors.fill: restart
             onClicked: {
-                if(scene.gameState === "gameOver"){
+                if (scene.gameState === "gameOver") {
                     gameover.opacity = 0
                     allFunction.reset()
                 }
             }
         }
     }
-
 }

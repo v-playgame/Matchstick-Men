@@ -15,7 +15,7 @@ Common.Gamebase {
     property double num: 80
 
     PhysicsWorld {
-        debugDrawVisible: true // set this to false to hide the physics overlay
+        //debugDrawVisible: true // set this to false to hide the physics overlay
         gravity.y: 15
         z: 1000 // set this high enough to draw on top of everything else
     }
@@ -105,8 +105,6 @@ Common.Gamebase {
         text: "Jump"
         anchors.right: scene.right
         y: 250
-        //        width: 300
-        //        height: 500
         opacity: 0.1
         visible: opacity
         anchors.rightMargin: 10
