@@ -31,7 +31,11 @@ EntityBase {
             var collidedEntity = other.getBody().target
             console.debug("collided with entity", collidedEntity.entityType)
             if (collidedEntity.entityType === "yellowmonster"
-                    || collidedEntity.entityType === "pinkmonster") {
+                    && player.y >= 310) {
+                collidedEntity.removeEntity()
+                scene.score++
+            } else if (collidedEntity.entityType === "pinkmonster"
+                       && player.y >= 310) {
                 collidedEntity.removeEntity()
                 scene.score++
             } else if (collidedEntity.entityType === "bluemonster"

@@ -58,6 +58,14 @@ Common.Gamebase {
         visible: false
     }
 
+    GameReady {
+        id: gameReady
+    }
+
+    GameOver {
+        id: gameOver
+    }
+
     Common.MenuButton {
         id: opposition
         text: "opposition"
@@ -88,13 +96,5 @@ Common.Gamebase {
     MouseArea {
         id: myMouse
         anchors.fill: opposition
-    }
-
-    GameReady {
-        id: gameReady
-    }
-
-    GameOver {
-        id: gameOver
     }
 }

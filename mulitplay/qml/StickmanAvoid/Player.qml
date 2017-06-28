@@ -36,17 +36,21 @@ EntityBase {
             if (collidedEntity.entityType === "obstacle1"
                     || collidedEntity.entityType === "obstacle2"
                     || collidedEntity.entityType === "obstacle3") {
-                scene.gameState = "gameOver"
+                player.stop()
                 console.log(scene.gameState.toString())
             }
         }
     }
 
     function reset() {
-        gameover.opacity = 0
+        gameOver.opacity = 0
         scene.gameState = "play"
-        player.x = 160
-        player.y = 375
-        scene.score = 0
+        //        tap.opacity = 1
+        player.x += 10
+    }
+
+    function stop() {
+        scene.gameState = "gameover"
+        gameOver.opacity = 1
     }
 }

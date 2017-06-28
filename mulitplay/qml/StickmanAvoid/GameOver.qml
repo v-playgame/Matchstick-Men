@@ -24,7 +24,7 @@ Item {
         MouseArea {
             anchors.fill: restart
             onClicked: {
-                if (scene.gameState === "gameOver") {
+                if (scene.gameState === "gameover") {
                     gameOver.opacity = 0
                     player.reset()
                 }

@@ -9,6 +9,7 @@ Item {
     enabled: visible
 
     Text {
+        id: go
         text: " Game Over"
         color: "black"
         font.pixelSize: 60

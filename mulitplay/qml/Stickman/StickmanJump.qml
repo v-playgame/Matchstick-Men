@@ -54,6 +54,56 @@ Common.Gamebase {
         font.pixelSize: 30
     }
 
+    Text {
+        id: bad
+        x: scene.width / 2 - bad.width / 2
+        anchors.top: scene.top
+        text: "BAD!!!"
+        color: "red"
+        font.pixelSize: 40
+        visible: false
+    }
+
+    Text {
+        id: terrible
+        x: scene.width / 2 - bad.width / 2
+        anchors.top: scene.top
+        text: "Terrible!!!!!"
+        color: "red"
+        font.pixelSize: 40
+        visible: false
+    }
+
+    Text {
+        id: justsoso
+        x: scene.width / 2 - justsoso.width / 2
+        anchors.top: scene.top
+        text: "Just So So!!"
+        color: "red"
+        font.pixelSize: 40
+        visible: false
+    }
+
+    Text {
+        id: well
+        x: scene.width / 2 - well.width / 2
+        anchors.top: scene.top
+        text: "WELL!"
+        color: "red"
+        font.pixelSize: 40
+        visible: false
+    }
+
+    Text {
+        id: unbelievable
+        x: scene.width / 2 - unbelievable.width / 2
+        anchors.top: scene.top
+        text: "Unbelievable"
+        color: "red"
+        font.pixelSize: 40
+        visible: false
+    }
+
     Common.MenuButton {
         id: back
         text: "Jump"

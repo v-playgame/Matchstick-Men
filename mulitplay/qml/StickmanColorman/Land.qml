@@ -7,12 +7,12 @@ EntityBase {
     Rectangle {
         id: ld
         border.color: "black"
-        width: /*250*/220 + Math.random() * 100
+        width: /*250*/ 220 + Math.random() * 100
         height: 200
     }
-    y: 350 + Math.random() * 100
+    y: 350 /*+ Math.random() * 100*/
 
-    x: scene.width + /*800*/250 + Math.floor(Math.random() * 2 + 1) * 60
+    x: scene.width + /*800*/ 250 + Math.floor(Math.random() * 2 + 1) * 60
 
     MovementAnimation {
         id: movement
