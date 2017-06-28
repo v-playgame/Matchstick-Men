@@ -14,7 +14,7 @@ EntityBase {
         target: ground1
         property: "x"
         minPropertyValue: -2000
-        velocity: -120
+        velocity: -150
         running: scene.gameState === "play"
     }
     BoxCollider {
@@ -25,7 +25,7 @@ EntityBase {
         id: gd
         anchors.centerIn: parent
         border.color: "black"
-        width: 1400
+        width: /*1500*/800
         height: 100
     }
 }

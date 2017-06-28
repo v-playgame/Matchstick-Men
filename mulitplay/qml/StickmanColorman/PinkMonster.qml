@@ -16,18 +16,18 @@ EntityBase {
             frameRate: 10
             frameWidth: 40
             frameHeight: 43
-            source: "/root/mulitplay/assets/img/pinkMonster.jpg"
+            source: "/root/mulitplay/assets/img/monster/pinkMonster.png"
         }
     }
 
-    x: scene.width + 1000 + Math.floor(Math.random() * 2 + 1) * 100
+    x: scene.width + /*1000*/ 400 + Math.floor(Math.random() * 2 + 1) * 100
 
     MovementAnimation {
         id: movement
         target: pink
         property: "x"
         minPropertyValue: -800
-        velocity: -120
+        velocity: -150
         running: scene.gameState === "play"
     }
     BoxCollider {

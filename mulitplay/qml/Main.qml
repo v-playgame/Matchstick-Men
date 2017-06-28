@@ -16,24 +16,23 @@ GameWindow {
     // menu scene
     MenuScene {
         id: menuScene
-        onSelectLevelPressed: gameWindow.state = "selectLevel"
+        onSelectGamePressed: gameWindow.state = "selectGame"
     }
 
-    // scene for selecting levels
-    SelectLevelScene {
-        id: selectLevelScene
-        onLevelPressed: {//Passing the selected Level to the GameScene
-            // selectedLevel is the parameter of the levelPressed signal
-            gameScene.setLevel(selectedLevel)
+    // scene for selecting games
+    SelectGameScene {
+        id: selectGameScene
+        onGamePressed: {//Passing the selected Game to the GameScene
+            gameScene.setGame(selectedGame)
             gameWindow.state = "game"
         }
         onBackButtonPressed: gameWindow.state = "menu"
     }
 
-    // game scene to play a level
+    // game scene to play
     GameScene {
         id: gameScene
-        onBackButtonPressed: gameWindow.state = "selectLevel"
+        onBackButtonPressed: gameWindow.state = "selectGame"
     }
 
     // 默认状态是菜单menu
@@ -47,9 +46,9 @@ GameWindow {
             PropertyChanges {target: gameWindow; activeScene: menuScene/*将焦点放在当前场景上*/}
         },
         State {
-            name: "selectLevel"
-            PropertyChanges {target: selectLevelScene; opacity: 1}
-            PropertyChanges {target: gameWindow; activeScene: selectLevelScene}
+            name: "selectGame"
+            PropertyChanges {target: selectGameScene; opacity: 1}
+            PropertyChanges {target: gameWindow; activeScene: selectGameScene}
         },
         State {
             name: "game"

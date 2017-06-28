@@ -30,21 +30,20 @@ EntityBase {
         fixture.onBeginContact: {
             var collidedEntity = other.getBody().target
             console.debug("collided with entity", collidedEntity.entityType)
-            if (collidedEntity.entityType === "pinkmonster"
-                    && player.y > scene.height - 450) {
+            if (collidedEntity.entityType === "yellowmonster"
+                    || collidedEntity.entityType === "pinkmonster") {
                 collidedEntity.removeEntity()
                 scene.score++
             } else if (collidedEntity.entityType === "bluemonster"
                        || collidedEntity.entityType === "greenmonster") {
                 allFunction.stopGame()
-            } else if (collidedEntity.entityType === "land") {
+            } else if (collidedEntity.entityType === "land"
+                       || collidedEntity.entityType === "ground") {
                 emit: collidWithGround()
                 scene.times = 0
                 console.log("emit")
-            } /*else {
+            } else
                 allFunction.stopGame()
-            }*/
-
         }
     }
 

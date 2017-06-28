@@ -7,19 +7,19 @@ EntityBase {
     Rectangle {
         id: ld
         border.color: "black"
-        width: 400
-        height: 200 + Math.random() * 100
+        width: /*250*/220 + Math.random() * 100
+        height: 200
     }
-    y: 300
+    y: 350 + Math.random() * 100
 
-    x: scene.width + 800 + Math.floor(Math.random() * 2 + 1) * 100
+    x: scene.width + /*800*/250 + Math.floor(Math.random() * 2 + 1) * 60
 
     MovementAnimation {
         id: movement
         target: land
         property: "x"
         minPropertyValue: -800
-        velocity: -120
+        velocity: -150
         running: scene.gameState === "play"
     }
     BoxCollider {

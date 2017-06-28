@@ -6,7 +6,8 @@ Rectangle {
   width: buttonText.width+ paddingHorizontal*2
   height: buttonText.height+ paddingVertical*2
 
-  color: "#e9e9e9"
+//  color: "#e9e9e9"
+  color: "silver"
   radius: 10
 
   // 从文本元素到左边和右边的矩形的水平边距。

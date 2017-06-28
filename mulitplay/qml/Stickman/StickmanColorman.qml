@@ -4,8 +4,8 @@ import Controls 1.0
 import "../StickmanColorman"
 import "../common" as Common
 
-Common.Levelbase {
-    levelName: "StickmanColorman"
+Common.Gamebase {
+    gameName: "StickmanColorman"
 
     id: scene
 
@@ -15,7 +15,7 @@ Common.Levelbase {
     property double num: 80
 
     PhysicsWorld {
-        //        debugDrawVisible: true // set this to false to hide the physics overlay
+        debugDrawVisible: true // set this to false to hide the physics overlay
         gravity.y: 15
         z: 1000 // set this high enough to draw on top of everything else
     }
@@ -26,9 +26,9 @@ Common.Levelbase {
     }
 
     Ground {
-           x: 80
-           y: 400
-       }
+        x: 80
+        y: 400
+    }
 
     Text {
         text: scene.score
@@ -52,6 +52,14 @@ Common.Levelbase {
 
         PinkMonster {
             id: pink
+        }
+    }
+
+    Component {
+        id: yellowmonster
+
+        YellowMonster {
+            id: yellow
         }
     }
 
@@ -82,12 +90,12 @@ Common.Levelbase {
         color: "silver"
         font.pixelSize: 20
         x: 30
-        y:200
+        y: 200
         visible: false
     }
 
-
-    CreatMonster{}
+    CreatMonster {
+    }
 
     Function {
         id: allFunction
@@ -96,25 +104,26 @@ Common.Levelbase {
     Common.MenuButton {
         text: "Jump"
         anchors.right: scene.right
-        y: 50
-        width: 300
-        height: 500
+        y: 250
+        //        width: 300
+        //        height: 500
         opacity: 0.1
         visible: opacity
         anchors.rightMargin: 10
         anchors.topMargin: 10
         onClicked: {
-            if(scene.gameState === "wait") {
+            console.log(player.y.toString())
+            if (player.y > 500 || player.x < 30)
+                allFunction.stopGame()
+            if (scene.gameState === "wait") {
                 tap.visible = false
                 scene.gameState = "play"
-            } else if(scene.gameState === "play" /*&& scene.times < 5*/){
+            } else if (scene.gameState === "play" && scene.times < 5) {
                 player.push()
                 scene.times++
             }
         }
-
     }
-
 
     GameReady {
         id: gameready
@@ -123,6 +132,4 @@ Common.Levelbase {
     GameOver {
         id: gameover
     }
-
 }
-

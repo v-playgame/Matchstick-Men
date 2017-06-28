@@ -6,27 +6,30 @@ import "../common"
 SceneBase {
     id:menuScene
 
-    signal selectLevelPressed
+    signal selectGamePressed
 
     // background
     Rectangle {
         anchors.fill: parent.gameWindowAnchorItem
         color: "#47688e"
+//        color: "silver"
     }
 
     // the "logo"
     Text {
         anchors.horizontalCenter: parent.horizontalCenter
-        y: 30
-        font.pixelSize: 30
-        color: "#e9e9e9"
-        text: "MultiSceneMultiLevel"
+        y: 10
+        font.pixelSize: 150
+//        color: "#e9e9e9"
+        color: "silver"
+
+        text: "史上最虐心的火柴人合集"
     }
 
     MenuButton {
         anchors.centerIn: parent
         text: "Games"
-        onClicked: selectLevelPressed()
+        onClicked: selectGamePressed()
     }
 
 }

@@ -17,17 +17,17 @@ Item {
                 frameRate: 10
                 frameWidth: 40
                 frameHeight: 43
-                source: "/root/mulitplay/assets/img/greenMonster.jpg"
+                source: "/root/mulitplay/assets/img/monster/greenMonster.png"
             }
         }
-        x: scene.width + 800 + Math.floor(Math.random() * 2 + 1) * 100
+        x: scene.width + /*800*/ 320 + Math.floor(Math.random() * 2 + 1) * 100
 
         MovementAnimation {
             id: movement
             target: green
             property: "x"
             minPropertyValue: -800
-            velocity: -120
+            velocity: -150
             running: scene.gameState === "play"
         }
 

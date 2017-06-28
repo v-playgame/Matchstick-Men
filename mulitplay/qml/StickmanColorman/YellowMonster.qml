@@ -2,8 +2,8 @@ import QtQuick 2.0
 import VPlay 2.0
 
 EntityBase {
-    id: blue
-    entityType: "bluemonster"
+    id: yellow
+    entityType: "yellowmonster"
 
     SpriteSequenceVPlay {
         id: mst
@@ -16,24 +16,25 @@ EntityBase {
             frameRate: 10
             frameWidth: 40
             frameHeight: 43
-            source: "/root/mulitplay/assets/img/monster/blueMonster.png"
+            source: "/root/mulitplay/assets/img/monster/yellowMonster.png"
         }
     }
 
-    x: scene.width + /*800*/ 450 + Math.floor(Math.random() * 2 + 1) * 100
+    x: scene.width + /*1000*/ 400 + Math.floor(Math.random() * 2 + 1) * 100
 
     MovementAnimation {
         id: movement
-        target: blue
+        target: yellow
         property: "x"
         minPropertyValue: -800
         velocity: -150
         running: scene.gameState === "play"
     }
-    CircleCollider {
+    BoxCollider {
         id: collider
-        radius: 20
-        anchors.fill: mst
+        anchors.bottom: mst.bottom
+        width: 20
+        height: scene.height + 45
         bodyType: Body.Dynamic
     }
 }

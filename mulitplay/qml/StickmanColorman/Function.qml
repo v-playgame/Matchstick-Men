@@ -4,9 +4,11 @@ Item {
 
     function reset() {
         gameover.opacity = 0
-        scene.gameState = "wait"
-        tap.visible = true
+        scene.gameState = "play"
+//        tap.visible = true
         scene.score = 0
+        player.y = 200
+        player.x = 100
     }
 
     function stopGame() {

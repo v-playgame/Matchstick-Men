@@ -8,13 +8,13 @@ SceneBase {
     id:gameScene
 
     // the filename of the current level gets stored here, it is used for loading the
-    property string activeLevelFileName
+    property string activeGameFileName
     // the currently loaded level gets stored here
-    property variant activeLevel
+    property variant activeGame
 
     // set the name of the current level, this will cause the Loader to load the corresponding level
-    function setLevel(fileName) {
-        activeLevelFileName = fileName
+    function setGame(fileName) {
+        activeGameFileName = fileName
     }
 
     // background
@@ -30,21 +30,21 @@ SceneBase {
         anchors.topMargin: 10
         onClicked: {
             backButtonPressed()
-            activeLevel = undefined
-            activeLevelFileName = ""
+            activeGame = undefined
+            activeGameFileName = ""
         }
     }
 
-    // load levels at runtime
+    // load game at runtime
     Loader {
         id: loader
-        source: activeLevelFileName !== "" ? "../Stickman/" + activeLevelFileName : ""
+        source: activeGameFileName !== "" ? "../Stickman/" + activeGameFileName : ""
         onLoaded: {
             // since we did not define a width and height in the level item itself, we are doing it here
             item.width = gameScene.width
             item.height = gameScene.height
             // store the loaded level as activeLevel for easier access
-            activeLevel = item
+            activeGame = item
         }
     }
 
@@ -56,7 +56,7 @@ SceneBase {
         anchors.topMargin: 10
         color: "black"
         font.pixelSize: 10
-        text: activeLevel !== undefined ? activeLevel.levelName : ""
+        text: activeGame !== undefined ? activeGame.gameName : ""
     }
 
 
