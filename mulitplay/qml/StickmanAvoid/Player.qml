@@ -37,6 +37,7 @@ EntityBase {
                     || collidedEntity.entityType === "obstacle2"
                     || collidedEntity.entityType === "obstacle3") {
                 scene.gameState = "gameOver"
+                console.log(scene.gameState.toString())
             }
         }
     }

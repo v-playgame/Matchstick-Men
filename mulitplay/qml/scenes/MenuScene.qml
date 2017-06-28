@@ -2,17 +2,18 @@ import VPlay 2.0
 import QtQuick 2.0
 import "../common"
 
+
 //主界面（最开始的界面）
 SceneBase {
-    id:menuScene
+    id: menuScene
 
     signal selectGamePressed
 
     // background
     Rectangle {
         anchors.fill: parent.gameWindowAnchorItem
-        color: "#47688e"
-//        color: "silver"
+        color: "black"
+        //        color: "silver"
     }
 
     // the "logo"
@@ -20,10 +21,10 @@ SceneBase {
         anchors.horizontalCenter: parent.horizontalCenter
         y: 10
         font.pixelSize: 150
-//        color: "#e9e9e9"
-        color: "silver"
+        //        color: "#e9e9e9"
+        color: "pink"
 
-        text: "史上最虐心的火柴人合集"
+        text: "最'有趣'的火柴人合集"
     }
 
     MenuButton {
@@ -31,5 +32,4 @@ SceneBase {
         text: "Games"
         onClicked: selectGamePressed()
     }
-
 }

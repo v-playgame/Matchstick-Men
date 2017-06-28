@@ -58,10 +58,6 @@ Common.Gamebase {
         visible: false
     }
 
-    GameReady {
-        id: gameReady
-    }
-
     Common.MenuButton {
         id: opposition
         text: "opposition"
@@ -76,7 +72,7 @@ Common.Gamebase {
     Common.MenuButton {
         text: "start"
         anchors.right: scene.right
-        y: 100
+        y: 50
         opacity: 0.7
         visible: opacity
         anchors.rightMargin: 10
@@ -92,5 +88,13 @@ Common.Gamebase {
     MouseArea {
         id: myMouse
         anchors.fill: opposition
+    }
+
+    GameReady {
+        id: gameReady
+    }
+
+    GameOver {
+        id: gameOver
     }
 }

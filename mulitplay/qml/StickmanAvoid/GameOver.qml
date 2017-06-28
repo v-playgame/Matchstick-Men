@@ -25,8 +25,8 @@ Item {
             anchors.fill: restart
             onClicked: {
                 if (scene.gameState === "gameOver") {
-                    gameover.opacity = 0
-                    allFunction.reset()
+                    gameOver.opacity = 0
+                    player.reset()
                 }
             }
         }

@@ -13,7 +13,7 @@ EntityBase {
     MovementAnimation {
         target: o1
         property: "y"
-        running: true
+        running: scene.gameState === "play"
         minPropertyValue: 0
         maxPropertyValue: 200
         velocity: 200
