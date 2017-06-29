@@ -6,7 +6,7 @@ Item {
         gameover.opacity = 0
         scene.gameState = "play"
         scene.score = 0
-        player.y = 200
+        player.y = 340
         player.x = 100
         terrible.visible = false
         bad.visible = false

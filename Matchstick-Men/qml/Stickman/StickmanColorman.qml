@@ -166,7 +166,7 @@ Common.Gamebase {
             if (scene.gameState === "wait") {
                 tap.visible = false
                 scene.gameState = "play"
-            } else if (scene.gameState === "play" && scene.times < 5) {
+            } else if (scene.gameState === "play" && scene.times < 4) {
                 player.push()
                 scene.times++
             }

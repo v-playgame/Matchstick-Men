@@ -22,7 +22,7 @@ SceneBase {
 
         MultiResolutionImage {
             id: jump
-            source: "/root/mulitplay/assets/img/gameScene/极限跳跃.png"
+            source: "../../assets/img/gameScene/极限跳跃.png"
             MouseArea {
                 anchors.fill: jump
                 onClicked: gamePressed("StickmanJump.qml")
@@ -31,7 +31,7 @@ SceneBase {
 
         MultiResolutionImage {
             id: stick
-            source: "/root/mulitplay/assets/img/gameScene/火柴人必须死.png"
+            source: "../../assets/img/gameScene/火柴人必须死.png"
             MouseArea {
                 anchors.fill: stick
                 onClicked: gamePressed("StickmanAvoid.qml")
@@ -40,7 +40,7 @@ SceneBase {
 
         MultiResolutionImage {
             id: color
-            source: "/root/mulitplay/assets/img/gameScene/彩色忍者.png"
+            source: "../../assets/img/gameScene/彩色忍者.png"
             MouseArea {
                 anchors.fill: color
                 onClicked: gamePressed("StickmanColorman.qml")
