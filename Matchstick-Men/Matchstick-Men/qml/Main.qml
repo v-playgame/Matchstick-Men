@@ -13,6 +13,7 @@ GameWindow {
     }
 
 
+
     // menu scene
     MenuScene {
         id: menuScene

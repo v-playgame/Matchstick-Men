@@ -24,7 +24,7 @@ EntityBase {
 
     CircleCollider {
         id: collider
-        radius: 15
+        radius: 14
     }
 
     function push() {

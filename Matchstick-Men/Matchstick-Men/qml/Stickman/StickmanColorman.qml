@@ -15,8 +15,8 @@ Common.Gamebase {
     property double num: 80
 
     PhysicsWorld {
-        //debugDrawVisible: true // set this to false to hide the physics overlay
-        gravity.y: 15
+       // debugDrawVisible: true // set this to false to hide the physics overlay
+        gravity.y: 27
         z: 1000 // set this high enough to draw on top of everything else
     }
 
@@ -27,7 +27,8 @@ Common.Gamebase {
 
     Ground {
         x: 80
-        y: 400
+        //y: 400
+        anchors.bottom: scene.bottom
     }
 
     Text {
@@ -81,6 +82,7 @@ Common.Gamebase {
         id: lands
         Land {
             id: land
+
         }
     }
 
@@ -166,7 +168,7 @@ Common.Gamebase {
             if (scene.gameState === "wait") {
                 tap.visible = false
                 scene.gameState = "play"
-            } else if (scene.gameState === "play" && scene.times < 4) {
+            } else if (scene.gameState === "play" && scene.times < 5) {
                 player.push()
                 scene.times++
             }

@@ -25,4 +25,5 @@ EntityBase {
             source: "../../assets/img/BgAndButton/land.png"
         }
     }
+
 }

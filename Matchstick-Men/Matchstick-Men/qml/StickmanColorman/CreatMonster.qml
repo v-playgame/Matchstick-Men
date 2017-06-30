@@ -14,7 +14,7 @@ GameWindow {
         id: timer
         running: scene.gameState === "play"
         repeat: true
-        interval: /*5000*/ 2200
+        interval: /*5000*/ 2000
 
         // a new target(=monster) is spawned every second
         onTriggered: {
@@ -26,7 +26,7 @@ GameWindow {
     Timer {
         running: scene.gameState === "play"
         repeat: true
-        interval: /*5000*/ 2300 + Math.random() * 100
+        interval: /*5000*/ 5432 + Math.random() * 100
 
         // a new target(=monster) is spawned every second
         onTriggered: {
@@ -37,7 +37,7 @@ GameWindow {
     Timer {
         running: scene.gameState === "play"
         repeat: true
-        interval: 5000 /*3000*/ + Math.random() * 100
+        interval: /*5000*/ 2375 + Math.random() * 100
 
         onTriggered: {
             entityManager.createEntityFromComponent(yellowmonster)
@@ -47,7 +47,7 @@ GameWindow {
     Timer {
         running: scene.gameState === "play"
         repeat: true
-        interval: 6000 /*2400*/ + Math.random() * 100
+        interval: /*3000*/ 4267 + Math.random() * 100
 
         // a new target(=monster) is spawned every second
         onTriggered: {
@@ -59,7 +59,7 @@ GameWindow {
     Timer {
         running: scene.gameState === "play"
         repeat: true
-        interval: 7000 /*2300*/ + Math.random() * 100
+        interval: /*7000*/3978 + Math.random() * 100
         // a new target(=monster) is spawned every second
         onTriggered: {
             console.debug("create a new monster")

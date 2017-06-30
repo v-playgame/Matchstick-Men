@@ -27,7 +27,7 @@ Common.Gamebase {
 
     Player {
         id: player
-        x: 147
+        x: 50
     }
 
     Ground {

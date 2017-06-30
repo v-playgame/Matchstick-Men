@@ -2,8 +2,8 @@ import QtQuick 2.0
 import VPlay 2.0
 
 EntityBase {
-    id: yellow
-    entityType: "yellowmonster"
+    id: pink
+    entityType: "pinkmonster"
 
     SpriteSequenceVPlay {
         id: mst
@@ -16,7 +16,7 @@ EntityBase {
             frameRate: 10
             frameWidth: 40
             frameHeight: 43
-            source: "../../assets/img/monster/yellowMonster.png"
+            source: "../../assets/img/monster/pinkMonster.png"
         }
     }
 
@@ -24,10 +24,10 @@ EntityBase {
 
     MovementAnimation {
         id: movement
-        target: yellow
+        target: pink
         property: "x"
         minPropertyValue: -800
-        velocity: -150
+        velocity: -200
         running: scene.gameState === "play"
     }
     BoxCollider {
@@ -36,5 +36,11 @@ EntityBase {
         width: 20
         height: scene.height + 45
         bodyType: Body.Dynamic
+        fixture.onBeginContact: {
+        var collidedEntity = other.getBody().target
+        console.debug("collided with entity", collidedEntity.entityType)
+            if (collidedEntity.entityType  !=="land"&&collidedEntity.entityType  !=="player")
+            collidedEntity.removeEntity()
+        }
     }
 }

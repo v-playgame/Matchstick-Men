@@ -27,7 +27,7 @@ Item {
             target: green
             property: "x"
             minPropertyValue: -800
-            velocity: -150
+            velocity: -200
             running: scene.gameState === "play"
         }
 
@@ -36,6 +36,12 @@ Item {
             radius: 20
             anchors.fill: mst
             bodyType: Body.Dynamic
+            fixture.onBeginContact: {
+            var collidedEntity = other.getBody().target
+            console.debug("collided with entity", collidedEntity.entityType)
+                if (collidedEntity.entityType  !=="land"&&collidedEntity.entityType  !=="player")
+                collidedEntity.removeEntity()
+            }
         }
     }
 }
