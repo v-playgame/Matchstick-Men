@@ -32,8 +32,8 @@ EntityBase {
         target: o1
         running: true
         from: 0
-        to: 360
-        duration: 800
+        to: -360
+        duration: 1000
         loops: Animation.Infinite
     }
 
